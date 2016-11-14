@@ -10,15 +10,15 @@ public class MachineACafe {
         this.state = new EtatAlimentation();
     }
 
-    public void give(int n){
+    public void give(int n) throws CoffeeMachineException{
         this.state=this.state.give(n);
     }
 
-    public void askCoffey(){
-        this.state=this.state.askCoffey();
+    public void askCoffee() throws CoffeeMachineException{
+        this.state=this.state.askCoffee();
     }
 
-    public void askTea() {
+    public void askTea() throws CoffeeMachineException{
        this.state=this.state.askTea();
     }
 }

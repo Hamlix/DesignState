@@ -5,7 +5,7 @@ package fr.paris10.miage.poa.coffeeMachine.version1;
  */
 public interface Etat {
 
-    Etat give(int n);
-    Etat askCoffey();
-    Etat askTea();
+    Etat give(int n) throws CoffeeMachineException;
+    Etat askCoffee() throws CoffeeMachineException;
+    Etat askTea() throws CoffeeMachineException;
 }

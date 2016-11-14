@@ -13,7 +13,7 @@ public class EtatAlimentation implements Etat {
 
 
     @Override
-    public Etat give(int n){
+    public Etat give(int n) throws CoffeeMachineException{
         sommeTotal+=n;
         if(sommeTotal>=10){
             return new EtatCommande();
@@ -25,15 +25,13 @@ public class EtatAlimentation implements Etat {
     }
 
     @Override
-    public Etat askCoffey(){
-        System.out.println(String.format("Il manque %1$d centimes",10-sommeTotal));
-        return this;
+    public Etat askCoffee() throws CoffeeMachineException{
+        throw new CoffeeMachineException(String.format("Il manque %1$d centimes",10-sommeTotal));
     }
 
     @Override
-    public Etat askTea() {
-        System.out.println(String.format("Il manque %1$d centimes",10-sommeTotal));
-        return null;
+    public Etat askTea() throws CoffeeMachineException{
+        throw new CoffeeMachineException(String.format("Il manque %1$d centimes",10-sommeTotal));
     }
 
 

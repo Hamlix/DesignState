@@ -7,19 +7,18 @@ public class EtatCommande implements Etat {
 
 
     @Override
-    public Etat give(int n){
-        System.out.println("Vous avez suffisemment d'argent");
-        return this;
+    public Etat give(int n) throws CoffeeMachineException{
+        throw new CoffeeMachineException("Vous avez suffisemment d'argent");
     }
 
     @Override
-    public Etat askCoffey(){
+    public Etat askCoffee() throws CoffeeMachineException{
         System.out.println("Voici votre cafe");
         return new EtatAlimentation();
     }
 
     @Override
-    public Etat askTea(){
+    public Etat askTea() throws CoffeeMachineException{
         System.out.println("Voici votre the");
         return new EtatAlimentation();
     }
